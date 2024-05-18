@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from Car_sharing.car_rentals.models import Car, Booking
-from Car_sharing.car_rentals.forms import BookingForm
+from car_rentals.models import Car, Booking
+from car_rentals.forms import BookingForm
 
 
 def car_list(request):

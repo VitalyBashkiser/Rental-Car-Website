@@ -1,6 +1,6 @@
 from django.urls import path
 
-from Car_sharing.car_rentals import views
+from car_rentals import views
 
 urlpatterns = [
     path("", views.car_list, name="car_list"),
@@ -8,3 +8,5 @@ urlpatterns = [
     path("car/<int:car_id>/book/", views.book_car, name="book_car"),
     path("my_bookings/", views.my_bookings, name="my_bookings"),
 ]
+
+app_name = "car_rentals"

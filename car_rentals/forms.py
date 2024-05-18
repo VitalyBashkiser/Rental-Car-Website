@@ -1,5 +1,5 @@
 from django import forms
-from Car_sharing.car_rentals.models import Booking
+from car_rentals.models import Booking
 
 
 class BookingForm(forms.ModelForm):
