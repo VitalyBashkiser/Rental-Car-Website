@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from car_rentals.models import Car, Booking
+from car_rentals.models import Client, Car, Booking, Transaction
 from car_rentals.forms import BookingForm
 
 
@@ -50,4 +50,15 @@ def my_bookings(request):
     bookings = Booking.objects.filter(user=request.user)
     return render(
         request, "car_rentals/my_bookings.html", {"bookings": bookings}
+    )
+
+
+@login_required
+def transaction_list(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id)
+    transactions = Transaction.objects.filter(booking=booking)
+    return render(
+        request,
+        "car_rentals/transaction_list.html",
+        {"booking": booking, "transactions": transactions},
     )

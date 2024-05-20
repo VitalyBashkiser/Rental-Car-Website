@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Car Detail{% endblock %}
+
+{% block content %}
+<h1>{{ car.make }} {{ car.model }}</h1>
+<p>Year: {{ car.year }}</p>
+<p>Price per day: ${{ car.price_per_day }}</p>
+<a href="{% url 'book_car' car.id %}">Book this car</a>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Car List{% endblock %}
+
+{% block content %}
+<h1>Car List</h1>
+<form method="GET" action="">
+    <input type="text" name="q" placeholder="Search by make or model" value="{{ query }}">
+    <button type="submit">Search</button>
+</form>
+<ul>
+    {% for car in cars %}
+        <li>
+            <a href="{% url 'car_detail' car.id %}">{{ car.make }} {{ car.model }} ({{ car.year }})</a>
+            - ${{ car.price_per_day }} per day
+        </li>
+    {% empty %}
+        <li>No cars available.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
