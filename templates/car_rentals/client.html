@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block title %}Client List{% endblock %}
+
+{% block content %}
+<h1>Client List</h1>
+<form method="GET" action="">
+    {{ search_form|crispy }}
+    <input type="text" name="q" placeholder="Search by name or email" value="{{ query }}">
+    <input type="submit" value="🔍">
+</form>
+<ul>
+    {% for client in clients %}
+        <li>
+            {{ client.username }} - {{ client.first_name }} {{ client.last_name }} ({{ client.email }})
+        </li>
+    {% empty %}
+        <li>No clients available.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

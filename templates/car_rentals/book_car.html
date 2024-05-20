@@ -3,10 +3,10 @@
 {% block title %}Book Car{% endblock %}
 
 {% block content %}
-<h1>Book {{ car.make }} {{ car.model }}</h1>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Book</button>
-</form>
+    <h1>Book {{ car.make }} {{ car.model }} ({{ car.year }})</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Book</button>
+    </form>
 {% endblock %}
