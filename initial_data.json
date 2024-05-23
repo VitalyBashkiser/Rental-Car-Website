@@ -94,5 +94,15 @@
             "year": 2020,
             "price_per_day": "70.00"
         }
+    },
+        {
+        "model": "car_rentals.car",
+        "pk": 7,
+        "fields": {
+            "make": "F-1",
+            "model": "F-1",
+            "year": 2010,
+            "price_per_day": "500.00"
+        }
     }
 ]

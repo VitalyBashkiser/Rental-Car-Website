@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # 3rd apps
     "debug_toolbar",
-    "social_django",
     # user apps
     "car_rentals.apps.CarRentalsConfig",
 ]
