@@ -39,13 +39,13 @@
     "model": "car_rentals.client",
     "pk": 3,
     "fields": {
-        "password": "pbkdf2_sha256$720000$LfZQRByDsZyswxL6etiZRg$KXrgGEGY+1XqcnGyN5kBKIcAWQ5MXNl8wAIKx9QbVIs=",
-        "last_login": "2024-05-23T21:44:18.487Z",
+        "password": "pbkdf2_sha256$720000$eelBMaQUTfJAd9oJ3on9tw$OABuERrcJ2FEGfRgLSymfkhCRzRv7w006YatAW68I78=",
+        "last_login": "2024-05-23T23:24:57.846Z",
         "is_superuser": true,
         "username": "Admin",
         "is_staff": true,
         "is_active": true,
-        "date_joined": "2024-05-23T21:38:37.138Z",
+        "date_joined": "2024-05-23T23:24:45.886Z",
         "first_name": "",
         "last_name": "",
         "email": "whois4rly@gmail.com",
@@ -135,17 +135,6 @@
         "price_per_day": "500.00",
         "description": null,
         "image_name": null
-    }
-},
-{
-    "model": "car_rentals.booking",
-    "pk": 1,
-    "fields": {
-        "car": 1,
-        "user": 3,
-        "start_date": "2024-05-11",
-        "end_date": "2024-05-21",
-        "total_cost": "500.00"
     }
 }
 ]
