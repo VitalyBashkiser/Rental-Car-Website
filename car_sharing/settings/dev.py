@@ -28,7 +28,7 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = ["rental-car-website.onrender.com"]
+ALLOWED_HOSTS = ["rental-car-website.onrender.com", "127.0.0.1"]
 
 # Application definition
 
@@ -44,6 +44,10 @@ INSTALLED_APPS = [
     "crispy_forms",
     # user apps
     "car_rentals",
+]
+
+INTERNAL_IPS = [
+    "127.0.0.1",
 ]
 
 MIDDLEWARE = [
