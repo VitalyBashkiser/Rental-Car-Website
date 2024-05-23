@@ -43,7 +43,7 @@ class BookCarView(LoginRequiredMixin, generic.CreateView):
         ).days * car.price_per_day
         booking.save()
         messages.success(self.request, "Booking successful!")
-        return redirect("car_detail", car_id=car.id)
+        return redirect("car_rentals:car-detail", pk=car.id)
 
 
 class MyBookingsView(LoginRequiredMixin, generic.ListView):
@@ -54,19 +54,21 @@ class MyBookingsView(LoginRequiredMixin, generic.ListView):
     def get_queryset(self):
         return Booking.objects.filter(user=self.request.user)
 
+
 class ClientView(LoginRequiredMixin, generic.ListView):
-    template_name = 'car_rentals/client.html'
+    template_name = "car_rentals/client.html"
     model = Client
-    context_object_name = 'clients'
+    context_object_name = "clients"
+
 
 class RegisterView(generic.View):
     def get(self, request):
         form = ClientRegistrationForm()
-        return render(request, 'registration/register.html', {'form': form})
+        return render(request, "registration/register.html", {"form": form})
 
     def post(self, request):
         form = ClientRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')
-        return render(request, 'registration/register.html', {'form': form})
+            return redirect("login")
+        return render(request, "registration/register.html", {"form": form})

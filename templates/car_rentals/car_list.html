@@ -1,23 +1,80 @@
 {% extends "base.html" %}
-{% load crispy_forms_filters %}
+{% load crispy_forms_filters static %}
 
 {% block title %}Car List{% endblock %}
 
 {% block content %}
 <h1>Car List</h1>
-<form method="GET" action="">
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        {% for car in cars %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            {% if car.make == "Toyota" and car.model == "Camry" %}
+                <img src="{% static 'img/Toyota_Camry.png' %}" class="d-block w-100" alt="Toyota Camry">
+            {% elif car.make == "Honda" and car.model == "Civic" %}
+                <img src="{% static 'img/Honda_Civic.png' %}" class="d-block w-100" alt="Honda Civic">
+            {% elif car.make == "Ford" and car.model == "Focus" %}
+                <img src="{% static 'img/Ford_Focus.png' %}" class="d-block w-100" alt="Ford Focus">
+            {% elif car.make == "Chevrolet" and car.model == "Malibu" %}
+                <img src="{% static 'img/Chevrolet_Malibu.png' %}" class="d-block w-100" alt="Chevrolet Malibu">
+            {% elif car.make == "Nissan" and car.model == "Altima" %}
+                <img src="{% static 'img/Nissan_Altima.png' %}" class="d-block w-100" alt="Nissan Altima">
+            {% elif car.make == "BMW" and car.model == "320i" %}
+                <img src="{% static 'img/BMW_320i.png' %}" class="d-block w-100" alt="BMW 320i">
+            {% else %}
+                <img src="{% static 'img/default_car.png' %}" class="d-block w-100" alt="{{ car.make }} {{ car.model }}">
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<form method="GET" action="" class="form-inline my-3">
     {{ search_form|crispy }}
-    <input type="text" name="q" placeholder="Search by make or model" value="{{ query }}">
-    <input type="submit" value="🔍">
+    <input type="text" name="q" placeholder="Search by make or model" value="{{ query }}" class="form-control mr-2">
+    <button type="submit" class="btn btn-primary">🔍</button>
 </form>
-<ul>
+
+<div class="row">
     {% for car in cars %}
-        <li>
-            <a href="{% url 'car_rentals:car-detail' car.id %}">{{ car.make }} {{ car.model }} ({{ car.year }})</a>
-            - ${{ car.price_per_day }} per day
-        </li>
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            {% if car.make == "Toyota" and car.model == "Camry" %}
+                <img src="{% static 'img/Toyota_Camry.png' %}" class="card-img-top" alt="Toyota Camry">
+            {% elif car.make == "Honda" and car.model == "Civic" %}
+                <img src="{% static 'img/Honda_Civic.png' %}" class="card-img-top" alt="Honda Civic">
+            {% elif car.make == "Ford" and car.model == "Focus" %}
+                <img src="{% static 'img/Ford_Focus.png' %}" class="card-img-top" alt="Ford Focus">
+            {% elif car.make == "Chevrolet" and car.model == "Malibu" %}
+                <img src="{% static 'img/Chevrolet_Malibu.png' %}" class="card-img-top" alt="Chevrolet Malibu">
+            {% elif car.make == "Nissan" and car.model == "Altima" %}
+                <img src="{% static 'img/Nissan_Altima.png' %}" class="card-img-top" alt="Nissan Altima">
+            {% elif car.make == "BMW" and car.model == "320i" %}
+                <img src="{% static 'img/BMW_320i.png' %}" class="card-img-top" alt="BMW 320i">
+            {% else %}
+                <img src="{% static 'img/default_car.png' %}" class="card-img-top" alt="{{ car.make }} {{ car.model }}">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ car.make }} {{ car.model }} ({{ car.year }})</h5>
+                <p class="card-text">{{ car.description|default:"No description available" }}</p>
+                <p class="card-text"><strong>${{ car.price_per_day }} per day</strong></p>
+                <a href="{% url 'car_rentals:car-detail' car.id %}" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+    </div>
     {% empty %}
-        <li>No cars available.</li>
+    <div class="col-12">
+        <p>No cars available.</p>
+    </div>
     {% endfor %}
-</ul>
+</div>
 {% endblock %}

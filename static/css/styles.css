@@ -1,0 +1,30 @@
+body {
+    padding-top: 56px;
+}
+
+.list-group-item {
+    border: none;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.carousel-item img, .slider img {
+    max-height: 500px;
+    height: 500px;
+    object-fit: cover;
+    width: 100%;
+}
+
+
+.card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+}

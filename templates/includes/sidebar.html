@@ -1,14 +1,26 @@
-<ul class="sidebar-nav list-group">
-  {% if client.is_authenticated %}
-    <li class="list-group-item">User: <a href="{{ user.get_absolute_url }}">{{ user.get_username }}</a></li>
-    <li class="list-group-item"><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
-  {% else %}
-    <li class="list-group-item"><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
-  {% endif %}
-
-  <br>
-
-  <li class="list-group-item"><a href="{% url 'car_rentals:car-list' %}">All cars</a></li>
-  <li class="list-group-item"><a href="{% url 'car_rentals:my-bookings' %}">My bookings</a></li>
-  <li class="list-group-item"><a href="{% url 'car_rentals:client' %}">Clients</a></li>
-</ul>
+<div class="list-group">
+    <a href="{% url 'car_rentals:car-list' %}" class="list-group-item list-group-item-action">
+        <i class="fas fa-home"></i> Home
+    </a>
+    {% if user.is_authenticated %}
+    <form method="post" action="{% url 'logout' %}" class="list-group-item list-group-item-action p-0">
+        {% csrf_token %}
+        <button class="btn btn-block text-left pl-4" type="submit">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+    </form>
+    {% else %}
+        <a href="{% url 'login' %}" class="list-group-item list-group-item-action">
+            <i class="fas fa-sign-in-alt"></i> Login
+        </a>
+    {% endif %}
+    <a href="{% url 'car_rentals:car-list' %}" class="list-group-item list-group-item-action">
+        <i class="fas fa-car"></i> All cars
+    </a>
+    <a href="{% url 'car_rentals:my-bookings' %}" class="list-group-item list-group-item-action">
+        <i class="fas fa-book"></i> My bookings
+    </a>
+    <a href="{% url 'car_rentals:client' %}" class="list-group-item list-group-item-action">
+        <i class="fas fa-users"></i> Clients
+    </a>
+</div>
