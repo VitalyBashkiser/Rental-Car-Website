@@ -54,6 +54,24 @@
     }
 },
 {
+    "model": "car_rentals.client",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$XIekA1ZDpf8SKhThGjy08A$5Rysra9k3UKceiMhEHl9ZKRgAS4lKZQVWN7cCGedzIw=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "user",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-05-23T23:29:26.630Z",
+        "first_name": "",
+        "last_name": "",
+        "email": "user@example.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
     "model": "car_rentals.car",
     "pk": 1,
     "fields": {
