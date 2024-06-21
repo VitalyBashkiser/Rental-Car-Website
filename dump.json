@@ -1,0 +1,158 @@
+[
+{
+    "model": "car_rentals.client",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$EHa6eWkFWyqZbFt2s2qLzz$szC2eTOz8sOkhy9Fod8V6A7GeQ7B07HG8g90MnDfJ68=",
+        "last_login": "2024-05-17T00:00:00Z",
+        "is_superuser": true,
+        "username": "admin",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-05-17T00:00:00Z",
+        "first_name": "",
+        "last_name": "",
+        "email": "admin@example.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "car_rentals.client",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$EHa6eWkFWyqZbFt2s2qLzz$szC2eTOz8sOkhy9Fod8V6A7GeQ7B07HG8g90MnDfJ68=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "user1",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-05-17T00:00:00Z",
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "user1@example.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "car_rentals.client",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$eelBMaQUTfJAd9oJ3on9tw$OABuERrcJ2FEGfRgLSymfkhCRzRv7w006YatAW68I78=",
+        "last_login": "2024-05-23T23:24:57.846Z",
+        "is_superuser": true,
+        "username": "Admin",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-05-23T23:24:45.886Z",
+        "first_name": "",
+        "last_name": "",
+        "email": "whois4rly@gmail.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "car_rentals.client",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$XIekA1ZDpf8SKhThGjy08A$5Rysra9k3UKceiMhEHl9ZKRgAS4lKZQVWN7cCGedzIw=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "user",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-05-23T23:29:26.630Z",
+        "first_name": "",
+        "last_name": "",
+        "email": "user@example.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "car_rentals.car",
+    "pk": 1,
+    "fields": {
+        "make": "Toyota",
+        "model": "Camry",
+        "year": 2020,
+        "price_per_day": "50.00",
+        "description": null,
+        "image_name": null
+    }
+},
+{
+    "model": "car_rentals.car",
+    "pk": 2,
+    "fields": {
+        "make": "Honda",
+        "model": "Civic",
+        "year": 2019,
+        "price_per_day": "45.00",
+        "description": null,
+        "image_name": null
+    }
+},
+{
+    "model": "car_rentals.car",
+    "pk": 3,
+    "fields": {
+        "make": "Ford",
+        "model": "Focus",
+        "year": 2018,
+        "price_per_day": "40.00",
+        "description": null,
+        "image_name": null
+    }
+},
+{
+    "model": "car_rentals.car",
+    "pk": 4,
+    "fields": {
+        "make": "Chevrolet",
+        "model": "Malibu",
+        "year": 2021,
+        "price_per_day": "55.00",
+        "description": null,
+        "image_name": null
+    }
+},
+{
+    "model": "car_rentals.car",
+    "pk": 5,
+    "fields": {
+        "make": "Nissan",
+        "model": "Altima",
+        "year": 2017,
+        "price_per_day": "38.00",
+        "description": null,
+        "image_name": null
+    }
+},
+{
+    "model": "car_rentals.car",
+    "pk": 6,
+    "fields": {
+        "make": "BMW",
+        "model": "320i",
+        "year": 2020,
+        "price_per_day": "70.00",
+        "description": null,
+        "image_name": null
+    }
+},
+{
+    "model": "car_rentals.car",
+    "pk": 7,
+    "fields": {
+        "make": "F-1",
+        "model": "F-1",
+        "year": 2010,
+        "price_per_day": "500.00",
+        "description": null,
+        "image_name": null
+    }
+}
+]

@@ -14,8 +14,7 @@ urlpatterns = [
     path("car/<int:pk>/", CarDetailView.as_view(), name="car-detail"),
     path("book/<int:car_id>/", BookCarView.as_view(), name="book-car"),
     path("my-bookings/", MyBookingsView.as_view(), name="my-bookings"),
-    path('client/', ClientView.as_view(), name='client'),
-    path('register/', RegisterView.as_view(), name='register'),
+    path("client/", ClientView.as_view(), name="client"),
 ]
 
 app_name = "car_rentals"

@@ -1,22 +1,30 @@
 {% extends "base.html" %}
-{% load crispy_forms_filters %}
+{% load crispy_forms_filters static %}
 
 {% block title %}Client List{% endblock %}
 
 {% block content %}
-<h1>Client List</h1>
-<form method="GET" action="">
-    {{ search_form|crispy }}
-    <input type="text" name="q" placeholder="Search by name or email" value="{{ query }}">
-    <input type="submit" value="🔍">
-</form>
-<ul>
-    {% for client in clients %}
-        <li>
-            {{ client.username }} - {{ client.first_name }} {{ client.last_name }} ({{ client.email }})
+<div class="container">
+    <h1 class="mt-4 mb-3">Client List</h1>
+
+    <form method="GET" action="" class="form-inline mb-4">
+        {{ search_form|crispy }}
+        <input type="text" name="q" placeholder="Search by name or email" value="{{ query }}" class="form-control mr-2">
+        <button type="submit" class="btn btn-primary">🔍</button>
+    </form>
+
+    <ul class="list-unstyled">
+        {% for client in clients %}
+        <li class="media mb-4">
+            <img src="{% if client.username == 'admin' %}{% static 'img/admin.png' %}{% elif client.username == 'John_Doe' %}{% static 'img/John_Doe.png' %}{% else %}{% static 'img/default_client.png' %}{% endif %}" class="mr-3 rounded-circle" alt="{{ client.username }}" style="width: 64px; height: 64px;">
+            <div class="media-body">
+                <h5 class="mt-0 mb-1">{{ client.first_name }} {{ client.last_name }}</h5>
+                <p>{{ client.email }}</p>
+            </div>
         </li>
-    {% empty %}
-        <li>No clients available.</li>
-    {% endfor %}
-</ul>
+        {% empty %}
+        <p>No clients available.</p>
+        {% endfor %}
+    </ul>
+</div>
 {% endblock %}

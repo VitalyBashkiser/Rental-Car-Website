@@ -23,5 +23,4 @@ urlpatterns = [
     path("", include("car_rentals.urls", namespace="car-rentals")),
     path("__debug__/", include("debug_toolbar.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
-    path("accounts/", include("car_rentals.urls", namespace="car-rentals-accounts")),
 ]
